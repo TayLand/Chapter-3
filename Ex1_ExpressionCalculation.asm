@@ -11,11 +11,18 @@ EBX, ECX, and EDX registers.
 .model flat,stdcall
 .stack 4096
 ExitProcess proto,dwExitCode:dword
+
 .code
-main PROC
-
+main proc
+	mov eax,5				
+	mov ebx,9
+	mov ecx,3
+	mov edx,1
 	
+	add eax,ebx
+	add ecx,edx
+	sub eax,ecx			
 
-	INVOKE ExitProcess,0
-main ENDP
-END main
+	invoke ExitProcess,0
+main endp
+end main
